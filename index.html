@@ -135,17 +135,21 @@
     </div>
   </div>
   <script>
-    // Bloco 2: Intercaladas por dia
-    const tarefasIntercaladas = [
+    // Bloco 2: Intercaladas por vez
+    const tarefasIntercaladasNina = [
       {
-        tarefa: "Lavar a louça",
-        icone: "🍽️",
-        obs: "Intercalado: um dia cada"
+        nome: "Leandra",
+        cor: "leandra",
+        icone: "🐕",
+        tarefa: "Sair com a Nina",
+        obs: "Intercalado por vez: uma vez Leandra, outra vez Maria"
       },
       {
-        tarefa: "Sair com a Nina",
+        nome: "Maria",
+        cor: "maria",
         icone: "🐕",
-        obs: "Intercalado: um dia cada"
+        tarefa: "Sair com a Nina",
+        obs: "Intercalado por vez: uma vez Leandra, outra vez Maria"
       }
     ];
 
@@ -213,19 +217,14 @@
         `;
       }
 
-      // SEÇÃO 2: Intercaladas por dia
+      // SEÇÃO 2: Intercaladas por vez (só Sair com a Nina)
       tbody.innerHTML += `
-        <tr><td colspan="3" class="secao">Tarefas Intercaladas (Um dia cada)</td></tr>
+        <tr><td colspan="3" class="secao">Tarefas Intercaladas</td></tr>
       `;
-      tarefasIntercaladas.forEach(t => {
+      tarefasIntercaladasNina.forEach(t => {
         tbody.innerHTML += `
           <tr>
-            <td class="leandra"><span class="icone">${t.icone}</span>Leandra</td>
-            <td>${t.tarefa}</td>
-            <td>${t.obs}</td>
-          </tr>
-          <tr>
-            <td class="maria"><span class="icone">${t.icone}</span>Maria</td>
+            <td class="${t.cor}"><span class="icone">${t.icone}</span>${t.nome}</td>
             <td>${t.tarefa}</td>
             <td>${t.obs}</td>
           </tr>
