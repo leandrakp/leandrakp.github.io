@@ -1,171 +1,272 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>L E A N D R A</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planilha de Tarefas Domésticas</title>
+  <style>
+    :root {
+      --leandra: #3A89F6;
+      --maria: #F667B3;
+      --background: #f6f6fa;
+      --card: #fff;
+      --border: #ececec;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--background);
+      margin: 0; padding: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 740px;
+      margin: 2.5rem auto;
+      padding: 1.5rem;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px #0002;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 0.2em;
+    }
+    .semana-toggle {
+      display: flex;
+      justify-content: center;
+      gap: .7em;
+      margin-bottom: 1em;
+      align-items: center;
+    }
+    .semana-toggle button {
+      background: linear-gradient(90deg, var(--leandra), var(--maria));
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: .5em 1.2em;
+      border-radius: 1.2em;
+      cursor: pointer;
+      font-size: 1.08em;
+      box-shadow: 0 1px 6px #0001;
+      transition: background .2s;
+    }
+    .tabela-tarefas {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      margin-bottom: 1.5rem;
+    }
+    .tabela-tarefas th,
+    .tabela-tarefas td {
+      background: #fff;
+      padding: .8em .7em;
+      text-align: left;
+      border-radius: 8px;
+      font-size: 1em;
+      border-bottom: 2px solid var(--border);
+    }
+    .tabela-tarefas th {
+      background: #f0f4fa;
+      font-weight: bold;
+      font-size: 1.08em;
+      border-bottom: 2px solid var(--border);
+    }
+    .leandra {
+      color: var(--leandra);
+      font-weight: 600;
+    }
+    .maria {
+      color: var(--maria);
+      font-weight: 600;
+    }
+    .icone {
+      font-size: 1.08em;
+      margin-right: 0.2em;
+      vertical-align: text-bottom;
+    }
+    .obs {
+      color: #666;
+      font-size: .96em;
+      font-style: italic;
+    }
+    .secao {
+      background: #f6f8ff;
+      font-weight: 600;
+      color: #222;
+      border-radius: 8px;
+      text-align: center;
+      padding: .45em;
+      font-size: 1em;
+      margin-top: 1.3em;
+      margin-bottom: .15em;
+      border-bottom: 2px solid var(--leandra);
+    }
+    @media (max-width: 600px) {
+      .container { padding: .5rem; }
+      h1 { font-size: 1.2em; }
+      .tabela-tarefas th, .tabela-tarefas td { font-size: .97em; }
+      .secao { font-size: .96em; }
+    }
+  </style>
 </head>
+<body>
+  <div class="container">
+    <h1>Planilha de Tarefas Domésticas</h1>
 
-<body class="bg-light text-dark">
-
-  <header class="container-fluid py-4 text-white text-center" style="background-color: #ff6f61;">
-    <h1 class="display-4 fw-bold">Bem-vindo ao meu mundo!</h1>
-
-    <nav class="nav justify-content-center nav-pills mt-3">
-      <a class="nav-link text-white active" style="background-color: #f7b267;" href="#">Menu</a>
-      <a class="nav-link text-white" href="passatempo.html">Meus Hobbies</a>
-    </nav>
-  </header>
-
-  <main class="container my-5">
-    <section class="row justify-content-center mb-5">
-      <div class="col-lg-8">
-        <h3 class="text-center fw-bold mb-4">Quem sou eu?</h3>
-        <p>
-          Meu nome é Leandra e sou uma pessoa curiosa, observadora e interessada em entender melhor a mim mesma e o mundo ao meu redor.
-        </p>
-        <p>
-          Gosto de escrever, de refletir e de aprender com tudo que me provoca alguma dúvida ou me tira da zona de conforto.
-        </p>
-        <p>
-          Nas horas livres, costumo ler, especialmente autores que abordam temas existenciais ou que escrevem de forma sensível e diferente.
-        </p>
-        <p>
-          Também gosto muito de jogos clássicos e tenho um certo apego por coisas nostálgicas. Sou alguém que valoriza <strong>autenticidade, esforço pessoal e leveza</strong> no dia a dia.
-        </p>
-        <p>
-          Estou sempre tentando melhorar como pessoa, mesmo que aos poucos.
-        </p>
-        <p>
-          Não tenho todas as respostas, mas tenho <em>vontade de crescer</em> e fazer escolhas que façam sentido pra mim.
-        </p>
-      </div>
-    </section>
-
-    <section class="row justify-content-center mb-5">
-      <div class="col-lg-8">
-        <h3 class="text-center fw-bold mb-4">Leituras que gosto:</h3>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Eckhart Tolle - The Power of Now</h5>
-                <a href="https://www.google.com.br/books/edition/O_Poder_do_Agora/95TlM8WBXwIC?hl=pt-BR&gbpv=0" class="btn btn-warning">Ver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Machado de Assis - Helena</h5>
-                <a href="https://www.google.com.br/books/edition/Helena/DmE0EQAAQBAJ?hl=pt-BR&gbpv=0" class="btn btn-warning">Ver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Clarice Lispector - Perdoando Deus</h5>
-                <a href="https://www.youtube.com/watch?v=liMev7ERAXY" class="btn btn-warning">Ouvir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Mia Couto - Terra Sonâmbula</h5>
-                <a href="https://www.google.com.br/books/edition/Terra_Son%C3%A2mbula/hfGhnJi_PwQC?hl=pt-BR&gbpv=0" class="btn btn-warning">Ver</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="row justify-content-center mb-5">
-      <div class="col-lg-8">
-        <h3 class="text-center fw-bold mb-4">Alguns jogos que gosto:</h3>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Super Bomberman (3 e 5) - Nintendo</h5>
-                <a href="https://www.retrogames.cz/play_1521-SNES.php" class="btn btn-warning">Jogar</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Aladdin - Nintendo</h5>
-                <a href="https://www.retrogames.cz/play_141-SNES.php" class="btn btn-warning">Jogar</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Goof Troop - Nintendo</h5>
-                <a href="https://www.retrogames.cz/play_1260-SNES.php" class="btn btn-warning">Jogar</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">The Sims (3 e 4)</h5>
-                <a href="https://www.ea.com/pt-br/games/the-sims/the-sims-4" class="btn btn-warning">Ver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 shadow rounded border-0">
-              <div class="card-body text-center">
-                <h5 class="card-title">Minecraft</h5>
-                <a href="https://www.minecraft.net/pt-br" class="btn btn-warning">Ver</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="row justify-content-center mb-5">
-      <div class="col-lg-8 text-center">
-        <h3 class="fw-bold mb-3">É aqui que eu moro:</h3>
-        <div class="ratio ratio-16x9 mb-3">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12204.596419255391!2d-53.983885671281!3d-24.573722817383224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f383c6e03976fd%3A0xc87e010d423d7d6c!2sR.%20S%C3%A3o%20Borja%2C%20Quatro%20Pontes%20-%20PR%2C%2085940-000!5e0!3m2!1spt-BR!2sbr!4v1747573071971!5m2!1spt-BR!2sbr" allowfullscreen></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="row justify-content-center mb-5">
-      <div class="col-lg-8">
-        <h4 class="text-center fw-bold mb-4">Entre em contato:</h4>
-        <table class="table table-bordered shadow">
-          <tr>
-            <td class="fw-bold">E-mail:</td>
-            <td><a href="mailto:leandrapereira@alunos.utfpr.edu.br" class="btn btn-warning">Enviar E-mail</a></td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Instagram:</td>
-            <td><a href="https://www.instagram.com/leandrakiste/" target="_blank" class="btn btn-warning">@leandrakiste</a></td>
-          </tr>
-        </table>
-      </div>
-    </section>
-
-    <div class="text-center my-4">
-      <a href="#top" class="btn btn-outline-danger">Voltar para o topo</a>
+    <div class="semana-toggle">
+      <span id="semana-label" style="font-size:1.1em">Semana atual: <b>Leandra</b></span>
+      <button onclick="trocarSemana()">Trocar Semana</button>
     </div>
-  </main>
 
-  <footer class="container-fluid text-dark text-center py-4" style="background-color: #ffe6cc;">
-    <p class="mb-0">© 2025 Leandra. Obrigada pela visita!</p>
-  </footer>
+    <table class="tabela-tarefas">
+      <thead>
+        <tr>
+          <th style="width: 28%;">Responsável</th>
+          <th style="width: 49%;">Tarefa</th>
+          <th style="width: 23%;">Observação</th>
+        </tr>
+      </thead>
+      <tbody id="tarefas-body">
+        <!-- JS insere as tarefas -->
+      </tbody>
+    </table>
+    <div class="obs">
+      <b>Obs:</b> Clique em “Trocar Semana” para alternar quem faz as tarefas semanais.<br>
+      <span style="font-size:1.1em;">✔️</span> Tarefas marcadas são recorrentes, não vinculadas a dias fixos.
+    </div>
+  </div>
+  <script>
+    // Bloco 2: Intercaladas por dia
+    const tarefasIntercaladas = [
+      {
+        tarefa: "Lavar a louça",
+        icone: "🍽️",
+        obs: "Intercalado: um dia cada"
+      },
+      {
+        tarefa: "Sair com a Nina",
+        icone: "🐕",
+        obs: "Intercalado: um dia cada"
+      }
+    ];
 
+    // Bloco 3: Fixas por pessoa
+    const tarefasFixas = [
+      { nome: "Leandra", cor: "leandra", tarefa: "Dobrar roupas", icone: "🧺", obs: "Sempre que tiver" },
+      { nome: "Leandra", cor: "leandra", tarefa: "Guardar roupas", icone: "🧦", obs: "Sempre que tiver" },
+      { nome: "Leandra", cor: "leandra", tarefa: "Lixo", icone: "🗑️", obs: "Segunda, quarta e sexta" },
+      { nome: "Leandra", cor: "leandra", tarefa: "Mercado", icone: "🛒", obs: "Sempre que precisar" },
+      { nome: "Maria", cor: "maria", tarefa: "Lavar roupas", icone: "🫧", obs: "Sempre que tiver" },
+      { nome: "Maria", cor: "maria", tarefa: "Estender roupas", icone: "👚", obs: "Sempre que tiver" },
+    ];
+
+    // Arrumar a cama (quem acorda primeiro)
+    const tarefaCama = { tarefa: "Arrumar a cama", icone: "🛌", obs: "Quem acordar primeiro" };
+
+    // Estado: quem faz na semana (true=Leandra, false=Maria)
+    let semanaLeandra = true;
+
+    function renderTarefas() {
+      const tbody = document.getElementById('tarefas-body');
+      tbody.innerHTML = "";
+
+      // SEÇÃO 1: Semanais alternadas
+      tbody.innerHTML += `
+        <tr><td colspan="3" class="secao">Tarefas Semanais Alternadas</td></tr>
+      `;
+      if (semanaLeandra) {
+        // Leandra faz almoço e roupa de cama; Maria aspira o quarto
+        tbody.innerHTML += `
+          <tr>
+            <td class="leandra"><span class="icone">🍳</span>Leandra</td>
+            <td>Fazer almoço</td>
+            <td>Semana da Leandra</td>
+          </tr>
+          <tr>
+            <td class="leandra"><span class="icone">🛏️</span>Leandra</td>
+            <td>Lavar roupa de cama</td>
+            <td>Semana da Leandra</td>
+          </tr>
+          <tr>
+            <td class="maria"><span class="icone">🧹</span>Maria</td>
+            <td>Aspirar o quarto<br><span class="obs">a cada 2 dias</span></td>
+            <td>Semana da Maria</td>
+          </tr>
+        `;
+      } else {
+        // Maria faz almoço e roupa de cama; Leandra aspira o quarto
+        tbody.innerHTML += `
+          <tr>
+            <td class="maria"><span class="icone">🍳</span>Maria</td>
+            <td>Fazer almoço</td>
+            <td>Semana da Maria</td>
+          </tr>
+          <tr>
+            <td class="maria"><span class="icone">🛏️</span>Maria</td>
+            <td>Lavar roupa de cama</td>
+            <td>Semana da Maria</td>
+          </tr>
+          <tr>
+            <td class="leandra"><span class="icone">🧹</span>Leandra</td>
+            <td>Aspirar o quarto<br><span class="obs">a cada 2 dias</span></td>
+            <td>Semana da Leandra</td>
+          </tr>
+        `;
+      }
+
+      // SEÇÃO 2: Intercaladas por dia
+      tbody.innerHTML += `
+        <tr><td colspan="3" class="secao">Tarefas Intercaladas (Um dia cada)</td></tr>
+      `;
+      tarefasIntercaladas.forEach(t => {
+        tbody.innerHTML += `
+          <tr>
+            <td class="leandra"><span class="icone">${t.icone}</span>Leandra</td>
+            <td>${t.tarefa}</td>
+            <td>${t.obs}</td>
+          </tr>
+          <tr>
+            <td class="maria"><span class="icone">${t.icone}</span>Maria</td>
+            <td>${t.tarefa}</td>
+            <td>${t.obs}</td>
+          </tr>
+        `;
+      });
+
+      // SEÇÃO 3: Tarefas fixas
+      tbody.innerHTML += `
+        <tr><td colspan="3" class="secao">Tarefas Fixas</td></tr>
+      `;
+      tarefasFixas.forEach(t => {
+        tbody.innerHTML += `
+          <tr>
+            <td class="${t.cor}"><span class="icone">${t.icone}</span>${t.nome}</td>
+            <td>${t.tarefa}</td>
+            <td>${t.obs}</td>
+          </tr>
+        `;
+      });
+
+      // Arrumar a cama
+      tbody.innerHTML += `
+        <tr><td colspan="3" class="secao">Tarefa de Quem Acorda Primeiro</td></tr>
+        <tr>
+          <td colspan="2"><span class="icone">🛌</span><b>Arrumar a cama</b></td>
+          <td>${tarefaCama.obs}</td>
+        </tr>
+      `;
+
+      // Atualiza label da semana
+      document.getElementById('semana-label').innerHTML =
+        `Semana atual: <b>${semanaLeandra ? 'Leandra' : 'Maria'}</b>`;
+    }
+
+    function trocarSemana() {
+      semanaLeandra = !semanaLeandra;
+      renderTarefas();
+    }
+
+    // Inicializa
+    renderTarefas();
+  </script>
 </body>
-
 </html>
